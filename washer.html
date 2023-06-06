@@ -16,6 +16,34 @@
 
 
 </head>
+<body> 
+       <nav>
+            <a href=""><img src="lllogo.png" alt=""></a>
+            <div class="nav-links" id="pannel">
+                <i class="fa fa-times" onclick="hide()"></i>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+
+                    <li> <button class="dropbtn">Services
+                            <i class="fa fa-caret-down" id="drop"></i>
+                            <div class="dropdown-content">
+                                <a href="ac.html" style="color: black;" onclick="hide()">AC Repair</a>
+                                <a href="fridge.html" style="color: black;" onclick="hide()">Refrigerator Repair</a>
+                                <a href="washer.html" style="color: black;" onclick="hide()">Washing Machine Repair</a>
+                                <!-- <a href="#LED" style="color: black;" onclick="hide()">LED/LCD Repair</a> -->
+                                <a href="oven.html" style="color: black;" onclick="hide()">Microwave Oven Repair</a>
+
+                            </div>
+                        </button></li>
+                    <li><button class="call_btn" onclick="window.open('tel:8858838810')">Call Now</button></li>
+
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="show()"></i>
+
+        </nav>
    <!-- services -->
     <section class="services" id="services">
         <h1>Our Services</h1>
@@ -30,5 +58,55 @@
 
 
             </div>
+
+</body>
 </html>
+<script>
+    function show() {
+        document.getElementById("pannel").style.right = "0";
+    }
+    function hide() {
+        document.getElementById("pannel").style.right = "-200px";
+    }
+    function hidepop() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+
+
+    var captcha, chars;
+
+    function genNewCaptcha() {
+        chars = "123456789098765432314516171819784563457863438923028467463829";
+        captcha = chars[Math.floor(Math.random() * chars.length)];
+        for (var i = 0; i < 4; i++) {
+            captcha = captcha + chars[Math.floor(Math.random() * chars.length)];
+        }
+        captchaTxtArea.value = captcha;
+    }
+    window.onload = genNewCaptcha();
+
+    function checkCaptcha() {
+        var check = document.getElementById("CaptchaEnter").value;
+        if (captcha == check) {
+            alert("Valid Captcha!!! Success");
+            document.getElementById("CaptchaEnter").value = "";
+        } else {
+            alert("InValid Captcha!!! Please Try Again");
+            document.getElementById("CaptchaEnter").value = "";
+        }
+
+        genNewCaptcha();
+    }
+
+    // email
+
+    function alll() {
+        alert("successfull");
+    }
+
+
+
+</script>
+
 
