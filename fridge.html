@@ -73,4 +73,52 @@
                 </div>
 
 </html>  
+      <script>
+    function show() {
+        document.getElementById("pannel").style.right = "0";
+    }
+    function hide() {
+        document.getElementById("pannel").style.right = "-200px";
+    }
+    function hidepop() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+
+
+    var captcha, chars;
+
+    function genNewCaptcha() {
+        chars = "123456789098765432314516171819784563457863438923028467463829";
+        captcha = chars[Math.floor(Math.random() * chars.length)];
+        for (var i = 0; i < 4; i++) {
+            captcha = captcha + chars[Math.floor(Math.random() * chars.length)];
+        }
+        captchaTxtArea.value = captcha;
+    }
+    window.onload = genNewCaptcha();
+
+    function checkCaptcha() {
+        var check = document.getElementById("CaptchaEnter").value;
+        if (captcha == check) {
+            alert("Valid Captcha!!! Success");
+            document.getElementById("CaptchaEnter").value = "";
+        } else {
+            alert("InValid Captcha!!! Please Try Again");
+            document.getElementById("CaptchaEnter").value = "";
+        }
+
+        genNewCaptcha();
+    }
+
+    // email
+
+    function alll() {
+        alert("successfull");
+    }
+
+
+
+</script>
+
 
